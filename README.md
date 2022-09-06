@@ -100,7 +100,7 @@ bỏ code vào cell
 | No. | Name              | Github                   | Email                  |
 |-----|-------------------|--------------------------|------------------------|
 | 1   | Huyen Ngoc N. Van | github.com/huyenngocnvan | 20521424@gm.uit.edu.vn |
-| 2   | Khanh B. T. Duong |                          | 20521444@gm.uit.edu.vn |
+| 2   | Khanh B. T. Duong | github.com/KDuongThB     | 20521444@gm.uit.edu.vn |
 | 3   | Thinh V. Le       | github.com/levietthinh   | 20520781@gm.uit.edu.vn |
 | 4   | Bao N. Tran       | github.com/TNB142        | 20520142@gm.uit.edu.vn |
 
