@@ -15,7 +15,7 @@ alt="UIT Together Research Group">
     <b><font size="5">UIT Together website</font></b>
     <sup>
       <a href="https://uit-together.github.io/">
-        <i><font size="4">HOT</font></i>
+<!--         <i><font size="4">HOT</font></i> -->
       </a>
     </sup>
     &nbsp;&nbsp;&nbsp;&nbsp; 
