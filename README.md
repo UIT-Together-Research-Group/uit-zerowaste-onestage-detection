@@ -49,7 +49,9 @@ Unzip it first, of course.
 <details open>
 <summary>Training</summary>
     
-Mô tả việc training (clone github, parse tham số, chạy training, lưu model,...)
+Mô tả các bước training (clone github, parse tham số, chạy training, lưu model,...)
+- **YOLOv mấy?**
+    
 ```
 cell code
 ```
@@ -61,7 +63,7 @@ cell code
 
 <details open>
 <summary>Evaluation</summary>
-Mô tả chi việc đánh giá kết quả mô hình train được
+Mô tả việc đánh giá kết quả mô hình train được
     
 ```
 cell code
@@ -88,13 +90,13 @@ bỏ code vào cell
 | MaskRCNN   | 22.8  | 34.9    | 24.4    | 4.6    | 10.6   | 25.8   |
 | TridentNet | 24.2  | 36.3    | 26.6    | 4.8    | 10.7   | 26.1   |
 ### Ours
-| Methods    | AP[%] | AP50[%] | AP75[%] | APs[%] | APm[%] | APl[%] |
-|------------|-------|---------|---------|--------|--------|--------|
-| YOLOv3     | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |
-| YOLOv4     | ~     | ~       | ~       | ~      | ~      | ~      |
-| YOLOv5     | ~     | ~       | ~       | ~      | ~      | ~      |
-| YOLOF      | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |
-| YOLOv7     | ~     | ~       | ~       | ~      | ~      | ~      |
+| Methods | AP[%] | AP50[%] | AP75[%] | APs[%] | APm[%] | APl[%] | Download |
+|---------|-------|---------|---------|--------|--------|--------|----------|
+| YOLOv3  | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |  [model]()   |
+| YOLOv4  | ~     | ~       | ~       | ~      | ~      | ~      |  [model](https://drive.google.com/file/d/119_qImmj6rxQhmXz_-7FflBUOazzOrlg/view?usp=sharing)   |
+| YOLOv5  | ~     | ~       | ~       | ~      | ~      | ~      |  [model]()   |
+| YOLOF   | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |  [model]()   |
+| YOLOv7  | ~     | ~       | ~       | ~      | ~      | ~      |  [model]()   |
 
 ## Project Members
 | No. | Name              | Github                   | Email                  |
@@ -107,7 +109,7 @@ bỏ code vào cell
 ## Acknowledgement
 
 This project was done under the instruction and support of the [UIT Together Research Group](https://uit-together.github.io/) and the [MMLab - UIT](http://mmlab.uit.edu.vn/).
-Implementations were conducted using the [MMDetection Toolbox](https://github.com/open-mmlab/mmdetection) and the official source code provided at: [YOLOv4](https://github.com/WongKinYiu/yolov7), [YOLOv5](), [YOLOv7](https://github.com/WongKinYiu/yolov7).
+Implementations were conducted using the [MMDetection Toolbox](https://github.com/open-mmlab/mmdetection), and the official source code and guide provided at: [YOLOv4](https://github.com/WongKinYiu/yolov7), [YOLOv5](https://github.com/ultralytics/yolov5), [YOLOv7](https://github.com/WongKinYiu/yolov7).
 
 ## References
 1. Redmon, J., & Farhadi, A. (2018). Yolov3: An incremental improvement. arXiv preprint arXiv:1804.02767.
