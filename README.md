@@ -7,7 +7,7 @@ alt="Trường Đại học Công nghệ Thông tin | University of Information 
   </a>
     <a href="https://uit-together.github.io/" title="UIT Together Research Group" style="border: none;">
     <img src="https://i.imgur.com/NjNLy4i.png" 
-width="200"
+width="180"
 alt="UIT Together Research Group"> 
      </a>    
 </p>
