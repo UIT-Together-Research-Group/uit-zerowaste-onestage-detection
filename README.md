@@ -143,6 +143,7 @@ Unzip it first, of course.
 
     
 - **Training YOLOv5** 
+    
     Clone the YOLOv5 Pytorch repo:
     ```   
     git clone https://github.com/ultralytics/yolov5 #clone
@@ -161,6 +162,7 @@ Unzip it first, of course.
     ```
     
 - **Training YOLOv7** 
+    
     Clone the YOLOv5 Pytorch repo
     ```
     cd /content    # Download YOLOv7 repository and install requirements
