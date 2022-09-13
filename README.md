@@ -184,9 +184,8 @@ Unzip it first, of course.
     </details>
     
     <details open>
-    <summary>Evaluation:
-        
-        Describe the evaluation of the trained model results </summary> 
+    <summary>Evaluation: </summary> 
+     Describe the evaluation of the trained model results
 
     ```
     # YOLOv5 uses val.py instead test.py
@@ -196,9 +195,9 @@ Unzip it first, of course.
 </details>
 
 <details open>
-<summary>Inference: 
-    
-    Load the trained model (model.pt) to run prediction</summary>
+<summary>Inference:</summary>
+  Load the trained model (model.pt) to run prediction
+
 
 - Detect for model which is trained by Pytorch
 ```
