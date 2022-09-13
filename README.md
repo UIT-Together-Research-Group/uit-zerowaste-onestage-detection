@@ -33,12 +33,6 @@ This is an empirical study of the performance of one-stage object detection meth
     <em>Sample image from ZeroWaste-f[6] dataset.</em>
 </p>
 
-<img src="https://i.imgur.com/DSmjwjf.jpg" alt="ZeroWate sample image" style="height: 500px; width: 850px;"/>
-
-<p align="center">
-Sample image from ZeroWaste-f[6] dataset.
-</p>
-
 [ZeroWaste](https://github.com/dbash/zerowaste) was introduced for industrial-grade waste detection and segmentation. *ZeroWaste-f* subset for fully supervised detection was chosen, containing 4661 frames sampled from 12 processed videos. This benchmark is divided into 3 subsets: 3,002 images for training, 572 images
 for validation and 929 images for testing. 
 
