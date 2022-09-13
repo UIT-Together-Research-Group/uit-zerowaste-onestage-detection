@@ -26,59 +26,190 @@ alt="UIT Together Research Group">
 ## Introduction
 This is an empirical study of the performance of one-stage object detection methods on the [ZeroWaste](https://github.com/dbash/zerowaste) dataset.
 
+<p align="center">
+    
+![](https://i.imgur.com/DSmjwjf.jpg)
+Sample image from ZeroWaste-f[6] dataset.
+</p>
 
+[ZeroWaste](https://github.com/dbash/zerowaste) was introduced for industrial-grade waste detection and segmentation. *ZeroWaste-f* subset for fully supervised detection was chosen, containing 4661 frames sampled from 12 processed videos. This benchmark is divided into 3 subsets: 3,002 images for training, 572 images
+for validation and 929 images for testing. 
 
 ## Implementations
 <details open>
-<summary>Data preparation</summary>
+<summary>Data Preparation:</summary>
 
 - **Download at:** [zerowaste-f-final.zip](https://zenodo.org/record/6412647/files/zerowaste-f-final.zip?download=1)
 Dataset is annotated in COCO format. Whew, such a relief.
 Unzip it first, of course.    
-- **Convert annotations to YOLO Darknet format (for YOLOv4, YOLOv5 and YOLOv7):**
+
+- **Organize the directories as follows:**
+    ```
+    └── work_dir/
+        └── data/
+            ├── train/
+            │   ├── images/
+            │   │   └── <train images.PNG>
+            │   ├── labels
+            │   │   └── <train frames.txt>
+            │   └── labels.json
+            │   └── sem_seg  
+            ├── test/
+            │   ├── images/
+            │   │   └── <test images.PNG>
+            │   ├── labels
+            │   └── labels.json
+            │   └── sem_seg 
+            ├── val/
+                ├── images/
+                │   └── <val images.PNG>
+                ├── labels
+                └── labels.json
+                └── sem_seg 
+    ```
+- **Convert annotations to YOLO Darknet format .txt label files (for YOLOv4, YOLOv5 and YOLOv7):**
     
     ```
-    thả code vào không khí
+    python script/convert_format.py
+    ```
+</details>
+
+<details open>
+<summary>Training Models:</summary>
+    
+<!-- [- **Clone the repository:** 
+    ```
+    git clone UIT-Together-Research-Group/uit-zerowaste-onestage-detection.git
+    ``` -->
+- **Training YOLOv3 and YOLOF using MMDetection toolbox:**
+
+    Install dependencies:
+    ```
+    pip install openmim
+    mim install mmdet
+    ```
+
+    Clone the MMDetection repository:
+
+    ```
+    git clone https://github.com/open-mmlab/mmdetection.git
+    cd mmdetection
+    ```
+
+    Install more dependencies, cuz why not:
+    ```
+    pip install -e -v .
+    ```
+    Modify the following keys in the yolov3.cfg file:
+    
+    Start training YOLOv3/YOLOF:
+    ```
+    python tools/train.py path/to/yolov3.cfg
     ```
     
-- **Organize the directories:**
+    *Same thing with training YOLOF, using yolof.cfg.*
+- **Training YOLOv4:** 
     
+    Install **pycocotools**:
+    ``` 
+    pip install mmpycocotools 
+    pip install pycocotools==2.0.1.
+    ```
+    Download pretrained weights:
+    ```
+    import gdown
+    cd /work_dir
+    gdown https://drive.google.com/u/0/uc?id=1TSvLHH48eJJk7Glr5p2lscVet2jCazhi&export=download
+    ```
+    Install **mish-cuda**:
+    ```
+    git clone https://github.com/JunnYu/mish-cuda
+    cd mish-cuda
+    python setup.py build install
+    ```
+    
+    Clone the YOLOv4 Pytorch repo:
+    ```
+    cd /work_dir
+    git clone https://github.com/WongKinYiu/PyTorch_YOLOv4
+    cd PyTorch_YOLOv4/
+    ```
+    
+    Install dependencies:
+    ```
+    pip install -r requirements.txt
+    cd /content
+    ```
+    Start training:
+    ```
+    python train.py --img 448 448 --batch-size 8 --project "your_save_folder" --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --cfg /content/uit-zerowaste-onestage-detection/config/yolov4.cfg --resume current_epoch --weights /content/yolov4.weights 
+    ```
 
+    
+- **Training YOLOv5:** 
+    Clone the YOLOv5 Pytorch repo:
+    ```   
+    git clone https://github.com/ultralytics/yolov5 #clone
+    cd yolov5
+    pip install -r requirements.txt  # install
+    ```
+    Install dependencies:
+    ```
+    cd /content
+    wget https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt
+    ```
+    Start training:
+    ```
+    cd /content/yolov5
+    python train.py --img 640 --batch 16 --epochs 300 --project "your_save_folder" --resume current_epoch --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --weights /content/yolov5s.pt
+    ```
+    
+- **Training YOLOv7** 
+    Clone the YOLOv5 Pytorch repo
+    ```
+    cd /content    # Download YOLOv7 repository and install requirements
+    git clone https://github.com/WongKinYiu/yolov7
+    cd yolov7
+    pip install -r requirements.txt
+    ```
+    Install dependencies
+    ```
+    cd /content/yolov7
+    wget "https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt"
+    ```
+    Start training
+    ```
+    cd /content/yolov7
+    python train.py --batch 16 --project "your_save_folder" --resume current_epoch.pt --save_period 5 --cfg /content/uit-zerowaste-onestage-detection/config/yolov7.yaml --epochs 300 --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --weights '/content/yolov7/yolov7.pt' --device 0 --hyp /content/yolov7/data/hyp.scratch.p5.yaml 
+    ```
+    
+    </details>
+    
+    <details open>
+    <summary>Evaluation: Describe the evaluation of the trained model results </summary> 
+
+    ```
+    # YOLOv5 uses val.py instead test.py
+    # Remember to replace the path in coco.yaml
+    python test.py --weights your_model --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --img 640 --verbose
+    ```  
 </details>
 
 <details open>
-<summary>Training</summary>
-    
-Mô tả các bước training (clone github, parse tham số, chạy training, lưu model,...)
-- **YOLOv mấy?**
-    
+<summary>Inference: Load the trained model (model.pt) to run prediction</summary>
+
+
+- Detect for model which is trained by Pytorch
 ```
-cell code
+# Replace "our_model" to "YOLOv4, YOLOv5, YOLOv7"
+python detect.py --weights /uit-zerowaste-onestage-detection/models/our_model.pt --data /content/yolov5/data/coco.yaml --img 640 --conf 0.25 --source '/uit-zerowaste-onestage-detection/data/images'
 ```
-
-> "Hông biết gì hết" - Khanh.
-
-    
-</details>
-
-<details open>
-<summary>Evaluation</summary>
-Mô tả việc đánh giá kết quả mô hình train được
-    
+- Detect for model which is trained by mmdetection
 ```
-cell code
-```
-
-
-    
-</details>
-
-<details open>
-<summary>Inference</summary>
-Chỗ này là load model mình đã train rồi (model.pt) lên để chạy prediction.
-    
-```
-bỏ code vào cell
+# Replace "our_model" to "YOLOv3, YOLOF"
+# Replace "our_config" to "YOLOv3, YOLOF"
+cd /content/mmdetection
+python tools/test.py /uit-zerowaste-onestage-detection/data/our_config.py /uit-zerowaste-onestage-detection/models/our_model.pth --show-dir 'save_result_path' 
 ```
 </details>
 
