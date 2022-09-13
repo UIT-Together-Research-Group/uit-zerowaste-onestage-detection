@@ -25,7 +25,7 @@ alt="UIT Together Research Group">
   
 ## Introduction
 This is an empirical study of the performance of one-stage object detection methods on the [ZeroWaste](https://github.com/dbash/zerowaste) dataset.
-<img src="https://i.imgur.com/DSmjwjf.jpg" alt="ZeroWate sample image" style="height: 100px; width:100px;"/>
+<img src="https://i.imgur.com/DSmjwjf.jpg" alt="ZeroWate sample image" style="height: 850px; width:500px;"/>
 
 <p align="center">
 Sample image from ZeroWaste-f[6] dataset.
