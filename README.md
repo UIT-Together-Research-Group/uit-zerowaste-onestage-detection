@@ -186,11 +186,11 @@ Unzip it first, of course.
 <summary>Step 3 : EVALUATION 🧮</summary> 
      Describe the evaluation of the trained model results
 
-    ```
-    # YOLOv5 uses val.py instead test.py
-    # Remember to replace the path in coco.yaml
-    python test.py --weights your_model --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --img 640 --verbose
-    ```  
+```
+# YOLOv5 uses val.py instead test.py
+# Remember to replace the path in coco.yaml
+python test.py --weights your_model --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --img 640 --verbose
+```  
 </details>
 
 <details open>
@@ -222,11 +222,11 @@ python tools/test.py /uit-zerowaste-onestage-detection/data/our_config.py /uit-z
 ### Ours
 | Methods | AP[%] | AP50[%] | AP75[%] | APs[%] | APm[%] | APl[%] | Download |
 |---------|-------|---------|---------|--------|--------|--------|----------|
-| YOLOv3  | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |  [model](https://drive.google.com/file/d/11G5ed6GZEKFxFLSutHT-4WOYt9-KEeaw/view?usp=sharing)   |
-| YOLOv4  | 22.4     | 32.9       | 24.5       | 0.7      | 0.74      | 24.4      |  [model](https://drive.google.com/file/d/119_qImmj6rxQhmXz_-7FflBUOazzOrlg/view?usp=sharing)   |
-| YOLOv5  | 25.3     | 36.1       | 27.6       | 4.7      | 14.7      | 27.0      |  [model](https://drive.google.com/file/d/11GK4yTuCZIsdqXChsELNKULIUcxRhRbX/view?usp=sharing)   |
-| YOLOF   | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |  [model](https://drive.google.com/file/d/11JWJmrAiQoUlwHNv-bgFlirR9l0FVstv/view?usp=sharing)   |
-| YOLOv7  | 33.2     | 44.3       | 35.0       | 5.9      | 20.0      | 35.6      |  [model](https://drive.google.com/file/d/11GyPUjUNd0OGMCvGNuGZ7C7l1rqI8Zvx/view?usp=sharing)   |
+| **YOLOv3**  | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |  [weight](https://drive.google.com/file/d/11G5ed6GZEKFxFLSutHT-4WOYt9-KEeaw/view?usp=sharing)   |
+| **YOLOv4**  | 22.4     | 32.9       | 24.5       | 0.7      | 0.74      | 24.4      |  [weight](https://drive.google.com/file/d/119_qImmj6rxQhmXz_-7FflBUOazzOrlg/view?usp=sharing)   |
+| **YOLOv5**  | 25.3     | 36.1       | 27.6       | 4.7      | 14.7      | 27.0      |  [weight](https://drive.google.com/file/d/11GK4yTuCZIsdqXChsELNKULIUcxRhRbX/view?usp=sharing)   |
+| **YOLOF**   | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |  [weight](https://drive.google.com/file/d/11JWJmrAiQoUlwHNv-bgFlirR9l0FVstv/view?usp=sharing)   |
+| **YOLOv7**  | 33.2     | 44.3       | 35.0       | 5.9      | 20.0      | 35.6      |  [weight](https://drive.google.com/file/d/11GyPUjUNd0OGMCvGNuGZ7C7l1rqI8Zvx/view?usp=sharing)   |
 
 ## Project Members
 | No. | Name              | GitHub                   | Email                  |
