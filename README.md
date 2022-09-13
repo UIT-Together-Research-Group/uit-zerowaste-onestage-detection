@@ -37,7 +37,7 @@ for validation and 929 images for testing.
 
 ## Implementations
 <details open>
-<summary>Data Preparation:</summary>
+<summary>Data Preparation</summary>
 
 - **Download at:** [zerowaste-f-final.zip](https://zenodo.org/record/6412647/files/zerowaste-f-final.zip?download=1)
 Dataset is annotated in COCO format. Whew, such a relief.
@@ -67,7 +67,7 @@ Unzip it first, of course.
                 └── labels.json
                 └── sem_seg 
     ```
-- **Convert annotations to YOLO Darknet format .txt label files (for YOLOv4, YOLOv5 and YOLOv7):**
+- **Convert annotations to YOLO Darknet format .txt label files (for YOLOv4, YOLOv5 and YOLOv7)**
     
     ```
     python script/convert_format.py
@@ -75,13 +75,9 @@ Unzip it first, of course.
 </details>
 
 <details open>
-<summary>Training Models:</summary>
-    
-<!-- [- **Clone the repository:** 
-    ```
-    git clone UIT-Together-Research-Group/uit-zerowaste-onestage-detection.git
-    ``` -->
-- **Training YOLOv3 and YOLOF using MMDetection toolbox:**
+<summary>Training Models</summary>
+
+- **Training YOLOv3 and YOLOF using MMDetection toolbox**
 
     Install dependencies:
     ```
@@ -108,7 +104,7 @@ Unzip it first, of course.
     ```
     
     *Same thing with training YOLOF, using yolof.cfg.*
-- **Training YOLOv4:** 
+- **Training YOLOv4** 
     
     Install **pycocotools**:
     ``` 
@@ -146,7 +142,7 @@ Unzip it first, of course.
     ```
 
     
-- **Training YOLOv5:** 
+- **Training YOLOv5** 
     Clone the YOLOv5 Pytorch repo:
     ```   
     git clone https://github.com/ultralytics/yolov5 #clone
