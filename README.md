@@ -9,12 +9,11 @@ alt="Trường Đại học Công nghệ Thông tin | University of Information 
     <img src="https://i.imgur.com/NjNLy4i.png" 
 width="200"
 alt="UIT Together Research Group"> 
-     </a>   
-    
+     </a>    
 </p>
     
 <div align="center">
-    <b><font size="5">UIT Together website</font></b>
+    <b><font size="5">UIT-Together Research Group </font></b>
     <sup>
       <a href="https://uit-together.github.io/">
         <i><font size="4">HOT</font></i>
