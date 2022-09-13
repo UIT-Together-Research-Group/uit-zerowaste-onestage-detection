@@ -26,23 +26,22 @@ alt="UIT Together Research Group">
 This is an empirical study of the performance of one-stage object detection methods on the [ZeroWaste](https://github.com/dbash/zerowaste), the first in-the-wild industrial-grade waste detection benchmark.
 
 <p>
-    <img src="https://i.imgur.com/DSmjwjf.jpg" alt="ZeroWate sample image" style="height: 70%; width: 70%;">
+    <img src="https://i.imgur.com/DSmjwjf.jpg" alt="ZeroWate sample image" style="height: 50%; width: 50%;"><img src="https://i.imgur.com/8gcuvlh.jpg" alt="ZeroWate sample image" style="height: 50%; width: 50%;">
 </p>
 <p>
     <em>Sample image from ZeroWaste-f[6] dataset.</em>
 </p>
 
-[ZeroWaste](https://github.com/dbash/zerowaste) was introduced for industrial-grade waste detection and segmentation. *ZeroWaste-f* subset for fully supervised detection was chosen, containing 4661 frames sampled from 12 processed videos. This benchmark is divided into 3 subsets: 3,002 images for training, 572 images
-for validation and 929 images for testing. 
+[ZeroWaste](https://github.com/dbash/zerowaste) was introduced for industrial-grade waste detection and segmentation. *ZeroWaste-f* subset for fully supervised detection was chosen, containing 4661 frames sampled from 12 processed videos. This benchmark is divided into 3 subsets: 3,002 images for training, 572 images for validation and 929 images for testing. 
 
 ## Implementations
 <details open>
-<summary>Data Preparation</summary>
+<summary> Step 1: DATA PREPARATION 🗳</summary>
 
 - **Download at:** [zerowaste-f-final.zip](https://zenodo.org/record/6412647/files/zerowaste-f-final.zip?download=1)
 Dataset is annotated in COCO format. Whew, such a relief.
 Unzip it first, of course.    
-
+    
 - **Organize the directories as follows:**
     ```
     └── work_dir/
@@ -75,7 +74,7 @@ Unzip it first, of course.
 </details>
 
 <details open>
-<summary>Training Models</summary>
+<summary>Step 2: TRAINING MODELS 📈</summary>
 
 - **Training YOLOv3 and YOLOF using MMDetection toolbox**
 
@@ -181,10 +180,10 @@ Unzip it first, of course.
     python train.py --batch 16 --project "your_save_folder" --resume current_epoch.pt --save_period 5 --cfg /content/uit-zerowaste-onestage-detection/config/yolov7.yaml --epochs 300 --data /content/uit-zerowaste-onestage-detection/data/coco.yaml --weights '/content/yolov7/yolov7.pt' --device 0 --hyp /content/yolov7/data/hyp.scratch.p5.yaml 
     ```
     
-    </details>
+</details>
     
-    <details open>
-    <summary>Evaluation: </summary> 
+<details open>
+<summary>Step 3 : EVALUATION 🧮</summary> 
      Describe the evaluation of the trained model results
 
     ```
@@ -195,7 +194,7 @@ Unzip it first, of course.
 </details>
 
 <details open>
-<summary>Inference:</summary>
+<summary>Step 4 : INFERENCE 📩</summary>
   Load the trained model (model.pt) to run prediction
 
 
@@ -223,19 +222,19 @@ python tools/test.py /uit-zerowaste-onestage-detection/data/our_config.py /uit-z
 ### Ours
 | Methods | AP[%] | AP50[%] | AP75[%] | APs[%] | APm[%] | APl[%] | Download |
 |---------|-------|---------|---------|--------|--------|--------|----------|
-| YOLOv3  | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |  [model]()   |
-| YOLOv4  | ~     | ~       | ~       | ~      | ~      | ~      |  [model](https://drive.google.com/file/d/119_qImmj6rxQhmXz_-7FflBUOazzOrlg/view?usp=sharing)   |
-| YOLOv5  | ~     | ~       | ~       | ~      | ~      | ~      |  [model]()   |
-| YOLOF   | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |  [model]()   |
-| YOLOv7  | ~     | ~       | ~       | ~      | ~      | ~      |  [model]()   |
+| YOLOv3  | 22.0  | 34.1    | 23.4    | 1.6    | 9.6    | 23.6   |  [model](https://drive.google.com/file/d/11G5ed6GZEKFxFLSutHT-4WOYt9-KEeaw/view?usp=sharing)   |
+| YOLOv4  | 22.4     | 32.9       | 24.5       | 0.7      | 0.74      | 24.4      |  [model](https://drive.google.com/file/d/119_qImmj6rxQhmXz_-7FflBUOazzOrlg/view?usp=sharing)   |
+| YOLOv5  | 25.3     | 36.1       | 27.6       | 4.7      | 14.7      | 27.0      |  [model](https://drive.google.com/file/d/11GK4yTuCZIsdqXChsELNKULIUcxRhRbX/view?usp=sharing)   |
+| YOLOF   | 26.2  | 41.5    | 28.6    | 1.4    | 10.8   | 28.6   |  [model](https://drive.google.com/file/d/11JWJmrAiQoUlwHNv-bgFlirR9l0FVstv/view?usp=sharing)   |
+| YOLOv7  | 33.2     | 44.3       | 35.0       | 5.9      | 20.0      | 35.6      |  [model](https://drive.google.com/file/d/11GyPUjUNd0OGMCvGNuGZ7C7l1rqI8Zvx/view?usp=sharing)   |
 
 ## Project Members
-| No. | Name              | Github                   | Email                  |
+| No. | Name              | GitHub                   | Email                  |
 |-----|-------------------|--------------------------|------------------------|
-| 1   | Huyen Ngoc N. Van | github.com/huyenngocnvan | 20521424@gm.uit.edu.vn |
-| 2   | Khanh B. T. Duong | github.com/KDuongThB     | 20521444@gm.uit.edu.vn |
-| 3   | Thinh V. Le       | github.com/levietthinh   | 20520781@gm.uit.edu.vn |
-| 4   | Bao N. Tran       | github.com/TNB142        | 20520142@gm.uit.edu.vn |
+| 1   | Huyen Ngoc N. Van | [huyenngocnvan](https://github.com/huyenngocnvan) | 20521424@gm.uit.edu.vn |
+| 2   | Khanh B. T. Duong | [KDuongThB](https://github.com/KDuongThB)     | 20521444@gm.uit.edu.vn |
+| 3   | Thinh V. Le       | [levietthinh](https://github.com/levietthinh)   | 20520781@gm.uit.edu.vn |
+| 4   | Bao N. Tran       | [TNB142](https://github.com/TNB142)        | 20520142@gm.uit.edu.vn |
 
 ## Acknowledgement
 
